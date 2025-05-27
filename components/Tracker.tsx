@@ -25,7 +25,7 @@ const Tracker = ({ sectionActive }: { sectionActive: string }) => {
 			) as HTMLElement | null;
 			if (!element) return;
 
-			if (sectionActive === "skills") {
+			if (sectionActive === "skills" || window.scrollY > 2300) {
 				stack.current.style.background = "#e2e8f066";
 				frameworks.current.style.background = "#e2e8f066";
 				additional.current.style.background = "#e2e8f066";

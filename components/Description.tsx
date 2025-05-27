@@ -1,13 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import { FaHtml5 } from "react-icons/fa";
 import { IoLogoCss3 } from "react-icons/io";
 import {
 	RiTailwindCssFill,
 	RiNodejsFill,
 	RiBootstrapLine,
+	RiArrowRightDoubleFill,
+	RiArrowLeftDoubleFill,
 } from "react-icons/ri";
 import { IoLogoJavascript, IoLogoFigma } from "react-icons/io5";
 import {
@@ -29,6 +31,7 @@ import { PiFileSqlFill } from "react-icons/pi";
 import { FaGitAlt } from "react-icons/fa";
 import Image from "next/image";
 import ProjectInfo from "./ProjectInfo";
+import { useProjectInfo } from "@/context/ProjectContext";
 
 const elementIds = [
 	"roles",
@@ -46,7 +49,8 @@ const Description = ({
 }: {
 	handleSectionActive: (section: string) => void;
 }) => {
-	const [showOverlay, setShowOverlay] = useState<boolean>(false);
+	// const [showOverlay, setShowOverlay] = useState<boolean>(false);
+	const { dispatch } = useProjectInfo();
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -80,8 +84,7 @@ const Description = ({
 		};
 	}, [handleSectionActive]);
 
-
-	console.log(showOverlay);
+	// console.log(showOverlay);
 
 	return (
 		<section className="xl:mx-auto xl:w-[650px] flex flex-col gap-16">
@@ -157,7 +160,7 @@ const Description = ({
 								<Link
 									href="https://www.prehabilitationtherapycenter.hr"
 									target="_blank"
-									className="underline hover:text-slate-400 transition-all duration-300"
+									className="underline hover:text-slate-400 active:text-slate-400 focus:text-slate-400 transition-all duration-300"
 								>
 									prehabilitationtherapycenter.hr
 								</Link>
@@ -167,59 +170,214 @@ const Description = ({
 					</div>
 					<div className="flex flex-col gap-5 py-3" id="projekti">
 						<h4 className="text-2xl font-bold">My projects</h4>
+						<small className="italic text-xl flex items-center gap-2 text-red-500">
+							<RiArrowRightDoubleFill /> hover over project image and then click
+							+ sign to get more info <RiArrowLeftDoubleFill />
+						</small>
 						<div className="grid xsm:grid-cols-1 grid-cols-2 lg:grid-cols-3 gap-3">
-							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/prehab.jpg')] bg-cover group bg-no-repeat">
-								<div className="absolute opacity-0 translate-y-full group-hover:translate-y-0 transition-all duration-500 bg-slate-200/80 group-hover:opacity-100 flex flex-col items-center justify-center w-full h-full gap-4">
+							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/prehab.jpg')] xl:bg-[url('/prehab_xl.jpg')] bg-cover group bg-no-repeat ">
+								<div className="absolute opacity-0 translate-y-full group-hover:translate-y-0 group-active:translate-y-0 group-focus:translate-y-0  transition-all duration-500 bg-slate-200/80 group-hover:opacity-100 group-active:opacity-100 group-focus:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4">
 									<p className="text-slate-800 text-xl text-center ">Prehab</p>
-									<div className="text-slate-800 text-2xl w-[40px] h-[40px] rounded-full border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 transition-all duration-500" onClick={() => setShowOverlay((prevState) => !prevState)}>
+									<div
+										className="text-slate-800 text-2xl w-[40px] h-[40px] rounded-full border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 active:bg-slate-800 focus:bg-slate-800 active:text-slate-200 focus:text-slate-200 transition-all duration-500"
+										onClick={() =>
+											dispatch({
+												type: "SET_PROJECT_DATA",
+												payload: {
+													title: "Prehab",
+													img: "/prehab_info.jpg",
+													stack: ["React", "Tailwind"],
+													link: "https://prehabilitationtherapycenter.hr/",
+													description:
+														"I built a website for my friend’s physiotherapy clinic using React for dynamic components and Tailwind CSS for styling. React Router DOM handled navigation between pages. I integrated EmailJS to enable contact form submissions directly to email, creating a responsive, professional, and functional online presence tailored to his clinic's needs.",
+													points: [
+														"client side navigation with react-router-dom",
+														"Meta tags implementation using React Helmet",
+														"email form using emailjs library",
+													],
+												},
+											})
+										}
+									>
 										+
 									</div>
 								</div>
 							</div>
-							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/dynamic_map.jpg')] bg-cover bg-no-repeat group">
-								<div className="absolute opacity-0 translate-y-full group-hover:translate-y-0 transition-all duration-500 bg-slate-200/80 group-hover:opacity-100 flex flex-col items-center justify-center w-full h-full gap-4">
+							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/dynamic_map.jpg')] xl:bg-[url('/dynamic_map_xl.jpg')] bg-cover bg-no-repeat group ">
+								<div className="absolute opacity-0 translate-y-full group-hover:translate-y-0 group-active:translate-y-0 group-focus:translate-y-0  transition-all duration-500 bg-slate-200/80 group-hover:opacity-100 group-focus:opacity-100 group-active:opacity-100 flex flex-col items-center justify-center w-full h-full gap-4">
 									<p className="text-slate-800 text-xl text-center ">Prehab</p>
-									<div className="text-slate-800 text-2xl w-[40px] h-[40px] rounded-full border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 transition-all duration-500">
+									<div
+										className="text-slate-800 text-2xl w-[40px] h-[40px] rounded-full border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 active:bg-slate-800 focus:bg-slate-800 hover:text-slate-200 active:text-slate-200 focus:text-slate-200 transition-all duration-500"
+										onClick={() =>
+											dispatch({
+												type: "SET_PROJECT_DATA",
+												payload: {
+													title: "Dynamic parking map Zadar",
+													img: "/dynamic_map.jpg",
+													stack: [
+														"JQuery",
+														"MapLibre",
+														"Terradraw",
+														"OpenFreeMap",
+													],
+													link: "https://sime-map.netlify.app/",
+													description:
+														"Created an interactive map using MapLibre GL JS, a free and open-source fork of Mapbox GL JS, developed before Mapbox became commercial. For map data, I used free vector tiles from OpenFreemap, based on OpenStreetMap. This setup allowed full customization and interactivity without any licensing fees or usage limits.",
+													points: [
+														"hover over markers to se tooltip",
+														"markers styled based on parking zones",
+														"zone created using terradraw",
+														"zone colors are clickable to show an information container",
+														"icon markers also clickable",
+														"hover over sms parking element to get more info",
+														"click to toggle 3D map",
+														"use navigation to toggle parts of map",
+													],
+												},
+											})
+										}
+									>
 										+
 									</div>
 								</div>
 							</div>
-							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/prehab.jpg')] bg-cover bg-no-repeat group">
-								<div className="absolute opacity-0 translate-y-full group-hover:translate-y-0 transition-all duration-500 bg-slate-200/80 group-hover:opacity-100 flex flex-col items-center justify-center w-full h-full gap-4">
+							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/prehab.jpg')] xl:bg-[url('/prehab_xl.jpg')] bg-cover bg-no-repeat  group">
+								<div className="absolute opacity-0 translate-y-full group-hover:translate-y-0 group-active:translate-y-0 group-focus:translate-y-0 transition-all duration-500 bg-slate-200/80 group-hover:opacity-100 group-active:opacity-100 group-focus:opacity-100 flex flex-col items-center justify-center w-full h-full gap-4">
 									<p className="text-slate-800 text-xl text-center ">Prehab</p>
-									<div className="text-slate-800 text-2xl w-[40px] h-[40px] rounded-full border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 transition-all duration-500">
+									<div
+										className="text-slate-800 text-2xl w-[40px] h-[40px] rounded-full border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 transition-all duration-500"
+										onClick={() =>
+											dispatch({
+												type: "SET_PROJECT_DATA",
+												payload: {
+													title: "Insignia",
+													img: "/prehab.jpg",
+													stack: [
+														"React",
+														"Tailwind",
+														"Node",
+														"Express",
+														"Postgresql",
+													],
+													description:
+														"I built a website for my friend’s physiotherapy clinic using React for dynamic components and Tailwind CSS for styling. React Router DOM handled navigation between pages. I integrated EmailJS to enable contact form submissions directly to email, creating a responsive, professional, and functional online presence tailored to his clinic's needs.",
+													points: [
+														"client side navigation with react-router-dom",
+														"Meta tags implementation using React Helmet",
+														"email form using emailjs library",
+													],
+												},
+											})
+										}
+									>
 										+
 									</div>
 								</div>
 							</div>
-							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/boulder.jpg')] bg-cover bg-no-repeat group">
-								<div className="absolute opacity-0 translate-y-full group-hover:translate-y-0 transition-all duration-500 bg-slate-200/80 group-hover:opacity-100 flex flex-col items-center justify-center w-full h-full gap-4">
+							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/boulder.jpg')] xl:bg-[url('/boulder_xl.jpg')] bg-cover bg-no-repeat  group">
+								<div className="absolute opacity-0 translate-y-full group-hover:translate-y-0 group-active:translate-y-0 group-focus:translate-y-0 transition-all duration-500 bg-slate-200/80 group-hover:opacity-100 group-active:opacity-100 group-focus:opacity-100 flex flex-col items-center justify-center w-full h-full gap-4">
 									<p className="text-slate-800 text-xl text-center ">Prehab</p>
-									<div className="text-slate-800 text-2xl w-[40px] h-[40px] rounded-full border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 transition-all duration-500">
+									<div
+										className="text-slate-800 text-2xl w-[40px] h-[40px] rounded-full border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 transition-all duration-500"
+										onClick={() =>
+											dispatch({
+												type: "SET_PROJECT_DATA",
+												payload: {
+													title: "Boulder",
+													img: "/prehab.jpg",
+													stack: ["Next", "Tailwind"],
+													description:
+														"I built a website for my friend’s physiotherapy clinic using React for dynamic components and Tailwind CSS for styling. React Router DOM handled navigation between pages. I integrated EmailJS to enable contact form submissions directly to email, creating a responsive, professional, and functional online presence tailored to his clinic's needs.",
+													points: [
+														"client side navigation with react-router-dom",
+														"Meta tags implementation using React Helmet",
+														"email form using emailjs library",
+													],
+												},
+											})
+										}
+									>
 										+
 									</div>
 								</div>
 							</div>
-							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/prehab.jpg')] bg-cover bg-no-repeat group">
-								<div className="absolute opacity-0 translate-y-full group-hover:translate-y-0 transition-all duration-500 bg-slate-200/80 group-hover:opacity-100 flex flex-col items-center justify-center w-full h-full gap-4">
+							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/prehab.jpg')] xl:bg-[url('/prehab_xl.jpg')] bg-cover bg-no-repeat  group">
+								<div className="absolute opacity-0 translate-y-full group-hover:translate-y-0 group-active:translate-y-0 group-focus:translate-y-0 transition-all duration-500 bg-slate-200/80 group-hover:opacity-100 group-active:opacity-100 group-focus:opacity-100 flex flex-col items-center justify-center w-full h-full gap-4">
 									<p className="text-slate-800 text-xl text-center ">Prehab</p>
-									<div className="text-slate-800 text-2xl w-[40px] h-[40px] rounded-full border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 transition-all duration-500">
+									<div
+										className="text-slate-800 text-2xl w-[40px] h-[40px] rounded-full border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 transition-all duration-500"
+										onClick={() =>
+											dispatch({
+												type: "SET_PROJECT_DATA",
+												payload: {
+													title: "Prehab",
+													img: "/prehab.jpg",
+													stack: ["React", "Tailwind"],
+													description:
+														"I built a website for my friend’s physiotherapy clinic using React for dynamic components and Tailwind CSS for styling. React Router DOM handled navigation between pages. I integrated EmailJS to enable contact form submissions directly to email, creating a responsive, professional, and functional online presence tailored to his clinic's needs.",
+													points: [
+														"client side navigation with react-router-dom",
+														"Meta tags implementation using React Helmet",
+														"email form using emailjs library",
+													],
+												},
+											})
+										}
+									>
 										+
 									</div>
 								</div>
 							</div>
-							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/parallax.jpg')] bg-cover bg-no-repeat group">
-								<div className="absolute opacity-0 translate-y-full group-hover:translate-y-0 transition-all duration-500 bg-slate-200/80 group-hover:opacity-100 flex flex-col items-center justify-center w-full h-full gap-4">
+							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/parallax.jpg')] xl:bg-[url('/parallax_xl.jpg')] bg-cover bg-no-repeat  group">
+								<div className="absolute opacity-0 translate-y-full group-hover:translate-y-0 group-active:translate-y-0 group-focus:translate-y-0 transition-all duration-500 bg-slate-200/80 group-hover:opacity-100 group-active:opacity-100 group-focus:opacity-100 flex flex-col items-center justify-center w-full h-full gap-4">
 									<p className="text-slate-800 text-xl text-center ">Prehab</p>
-									<div className="text-slate-800 text-2xl w-[40px] h-[40px] rounded-full border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 transition-all duration-500">
+									<div
+										className="text-slate-800 text-2xl w-[40px] h-[40px] rounded-full border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 transition-all duration-500"
+										onClick={() =>
+											dispatch({
+												type: "SET_PROJECT_DATA",
+												payload: {
+													title: "Parallax",
+													img: "/parallax.jpg",
+													stack: ["JS", "CSS"],
+													description:
+														"I built a website for my friend’s physiotherapy clinic using React for dynamic components and Tailwind CSS for styling. React Router DOM handled navigation between pages. I integrated EmailJS to enable contact form submissions directly to email, creating a responsive, professional, and functional online presence tailored to his clinic's needs.",
+													points: [
+														"client side navigation with react-router-dom",
+														"Meta tags implementation using React Helmet",
+														"email form using emailjs library",
+													],
+												},
+											})
+										}
+									>
 										+
 									</div>
 								</div>
 							</div>
-							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/prehab.jpg')] bg-cover bg-no-repeat group">
-								<div className="absolute opacity-0 translate-y-full group-hover:translate-y-0 transition-all duration-500 bg-slate-200/80 group-hover:opacity-100 flex flex-col items-center justify-center w-full h-full gap-4">
+							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/prehab.jpg')] xl:bg-[url('/prehab_xl.jpg')] bg-cover bg-no-repeat  group">
+								<div className="absolute opacity-0 translate-y-full group-hover:translate-y-0 group-active:translate-y-0 group-focus:translate-y-0 transition-all duration-500 bg-slate-200/80 group-hover:opacity-100 group-active:opacity-100 group-focus:opacity-100 flex flex-col items-center justify-center w-full h-full gap-4">
 									<p className="text-slate-800 text-xl text-center ">Prehab</p>
-									<div className="text-slate-800 text-2xl w-[40px] h-[40px] rounded-full border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 transition-all duration-500">
+									<div
+										className="text-slate-800 text-2xl w-[40px] h-[40px] rounded-full border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 transition-all duration-500"
+										onClick={() =>
+											dispatch({
+												type: "SET_PROJECT_DATA",
+												payload: {
+													title: "Prehab",
+													img: "/prehab.jpg",
+													stack: ["React", "Tailwind"],
+													description:
+														"I built a website for my friend’s physiotherapy clinic using React for dynamic components and Tailwind CSS for styling. React Router DOM handled navigation between pages. I integrated EmailJS to enable contact form submissions directly to email, creating a responsive, professional, and functional online presence tailored to his clinic's needs.",
+													points: [
+														"client side navigation with react-router-dom",
+														"Meta tags implementation using React Helmet",
+														"email form using emailjs library",
+													],
+												},
+											})
+										}
+									>
 										+
 									</div>
 								</div>
@@ -377,7 +535,7 @@ const Description = ({
 					</div>
 				</div>
 			</div>
-			<ProjectInfo show={showOverlay} setShow={setShowOverlay} />
+			<ProjectInfo />
 		</section>
 	);
 };
