@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 const elementIds = [
 	"roles",
@@ -11,15 +11,30 @@ const elementIds = [
 	"personal",
 	"projekti",
 	"skills",
-	"stack",
-	"frameworks",
-	"additional",
 ];
 
 const Tracker = ({ sectionActive }: { sectionActive: string }) => {
+	const stack = useRef(null);
+	const frameworks = useRef(null);
+	const additional = useRef(null);
+
 	useEffect(() => {
 		elementIds.forEach((dataTarget) => {
-			const element = document.querySelector(`[data-target="${dataTarget}"]`);
+			const element = document.querySelector(
+				`[data-target="${dataTarget}"]`
+			) as HTMLElement | null;
+			if (!element) return;
+
+			if (sectionActive === "skills") {
+				stack.current.style.background = "#e2e8f066";
+				frameworks.current.style.background = "#e2e8f066";
+				additional.current.style.background = "#e2e8f066";
+			} else {
+				stack.current.style.background = "";
+				frameworks.current.style.background = "";
+				additional.current.style.background = "";
+			}
+
 			if (element.dataset.target === sectionActive) {
 				element.style.background = "#e2e8f066";
 			} else {
@@ -113,6 +128,7 @@ const Tracker = ({ sectionActive }: { sectionActive: string }) => {
 							className="text-xl text-slate-200 border-[1px]  border-slate-200 py-1 px-2 inline-block w-full"
 							href="#stack"
 							data-target="stack"
+							ref={stack}
 						>
 							Stack
 						</a>
@@ -122,6 +138,7 @@ const Tracker = ({ sectionActive }: { sectionActive: string }) => {
 							className="text-xl text-slate-200 border-[1px]  border-slate-200 py-1 px-2 inline-block w-full"
 							href="#frameworks"
 							data-target="frameworks"
+							ref={frameworks}
 						>
 							Frameworks & Libraries
 						</a>
@@ -131,6 +148,7 @@ const Tracker = ({ sectionActive }: { sectionActive: string }) => {
 							className="text-xl text-slate-200 border-[1px]  border-slate-200 py-1 px-2 inline-block w-full"
 							href="#additional"
 							data-target="additional"
+							ref={additional}
 						>
 							Additional
 						</a>

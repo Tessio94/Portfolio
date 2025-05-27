@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FaHtml5 } from "react-icons/fa";
 import { IoLogoCss3 } from "react-icons/io";
 import {
@@ -28,6 +28,7 @@ import {
 import { PiFileSqlFill } from "react-icons/pi";
 import { FaGitAlt } from "react-icons/fa";
 import Image from "next/image";
+import ProjectInfo from "./ProjectInfo";
 
 const elementIds = [
 	"roles",
@@ -38,9 +39,6 @@ const elementIds = [
 	"personal",
 	"projekti",
 	"skills",
-	"stack",
-	"frameworks",
-	"additional",
 ];
 
 const Description = ({
@@ -48,11 +46,23 @@ const Description = ({
 }: {
 	handleSectionActive: (section: string) => void;
 }) => {
+	const [showOverlay, setShowOverlay] = useState<boolean>(false);
+
 	useEffect(() => {
 		const handleScroll = () => {
 			// console.log("scroll :", window.scrollY);
+			if (window.scrollY > 2300 && window.scrollY < 2350) {
+				handleSectionActive("frameworks");
+				return;
+			}
+			if (window.scrollY > 2350) {
+				handleSectionActive("additional");
+				return;
+			}
+
 			elementIds.forEach((id) => {
 				const roles = document.getElementById(`${id}`);
+				if (!roles) return;
 
 				if (
 					window.scrollY >= roles?.offsetTop &&
@@ -68,7 +78,10 @@ const Description = ({
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
 		};
-	}, []);
+	}, [handleSectionActive]);
+
+
+	console.log(showOverlay);
 
 	return (
 		<section className="xl:mx-auto xl:w-[650px] flex flex-col gap-16">
@@ -158,7 +171,7 @@ const Description = ({
 							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/prehab.jpg')] bg-cover group bg-no-repeat">
 								<div className="absolute opacity-0 translate-y-full group-hover:translate-y-0 transition-all duration-500 bg-slate-200/80 group-hover:opacity-100 flex flex-col items-center justify-center w-full h-full gap-4">
 									<p className="text-slate-800 text-xl text-center ">Prehab</p>
-									<div className="text-slate-800 text-2xl w-[40px] h-[40px] rounded-full border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 transition-all duration-500">
+									<div className="text-slate-800 text-2xl w-[40px] h-[40px] rounded-full border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 transition-all duration-500" onClick={() => setShowOverlay((prevState) => !prevState)}>
 										+
 									</div>
 								</div>
@@ -222,7 +235,7 @@ const Description = ({
 				>
 					My skills include
 				</h2>
-				<div className="flex xl:flex-col xl:gap-8 gap-y-12 justify-between flex-wrap">
+				<div className="flex xl:gap-8 gap-y-12 justify-between flex-wrap">
 					<div className="flex flex-col gap-5 py-3" id="stack">
 						<h4 className="text-2xl font-bold">Languages & Technologies</h4>
 						<div className="text-xl w-[100px] max-w-[250px]">
@@ -364,6 +377,7 @@ const Description = ({
 					</div>
 				</div>
 			</div>
+			<ProjectInfo show={showOverlay} setShow={setShowOverlay} />
 		</section>
 	);
 };
