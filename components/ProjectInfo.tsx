@@ -1,12 +1,14 @@
 import { useProjectInfo } from "@/context/ProjectContext";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { useState } from "react";
 import { CgCloseR } from "react-icons/cg";
 
 const ProjectInfo = () => {
 	const { dispatch, state } = useProjectInfo();
+	const [isImageLoaded, setIsImageLoaded] = useState(false);
 
-	console.log(state);
+	// console.log(state);
 
 	return (
 		<div
@@ -19,14 +21,24 @@ const ProjectInfo = () => {
 		>
 			<div className="relative w-[1200px] max-w-[90%]  h-[800px] bg-stone-800 border-2 border-slate-200 z-30 rounded-2xl flex lg:flex-row flex-col items-center lg:items-start gap-12 px-6 lg:px-20 xl:px-30 py-20  overflow-y-auto scrollbar xsm:scrollbar-thin scrollbar-thumb-red-800/60 scrollbar-track-slate-300 scrollbar-thumb-rounded-2xl scrollbar-track-rounded-2xl">
 				<div className="w-full lg:w-auto items-start  lg:basis-1/3 md:flex-row flex-col lg:flex-col gap-8 flex shrink-0">
-					<div className="w-full h-auto border-slate-200 border-2  rounded-2xl overflow-hidden">
+					<div className="w-full aspect-[477/329] relative border-slate-200 border-2 rounded-2xl overflow-hidden">
+						{/* Spinner */}
+						{!isImageLoaded && (
+							<div className="absolute inset-0 z-10 flex items-center justify-center bg-stone-800">
+								<div className="w-10 h-10 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+							</div>
+						)}
+
+						{/* Image */}
 						<Image
 							src={state.img}
 							alt={state.imgAlt}
-							width={856}
-							height={316}
-							sizes="(max-width: 640px) 263px, (max-width: 1024px) 856px, 460px"
-							className="w-full h-full"
+							fill
+							className={cn("object-cover transition-opacity duration-500", {
+								"opacity-0": !isImageLoaded,
+								"opacity-100": isImageLoaded,
+							})}
+							onLoadingComplete={() => setIsImageLoaded(true)}
 						/>
 					</div>
 					<div className="flex xsm:flex-col flex-row md:flex-col gap-8 justify-between">
