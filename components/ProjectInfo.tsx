@@ -22,14 +22,6 @@ const ProjectInfo = () => {
 			<div className="relative w-[1200px] max-w-[90%]  h-[800px] bg-stone-800 border-2 border-slate-200 z-30 rounded-2xl flex lg:flex-row flex-col items-center lg:items-start gap-12 px-6 lg:px-20 xl:px-30 py-20  overflow-y-auto scrollbar xsm:scrollbar-thin scrollbar-thumb-red-800/60 scrollbar-track-slate-300 scrollbar-thumb-rounded-2xl scrollbar-track-rounded-2xl">
 				<div className="w-full lg:w-auto items-start  lg:basis-1/3 md:flex-row flex-col lg:flex-col gap-8 flex shrink-0">
 					<div className="w-full aspect-[477/329] relative border-slate-200 border-2 rounded-2xl overflow-hidden">
-						{/* Spinner */}
-						{!isImageLoaded && (
-							<div className="absolute inset-0 z-10 flex items-center justify-center bg-stone-800">
-								<div className="w-10 h-10 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
-							</div>
-						)}
-
-						{/* Image */}
 						<Image
 							src={state.img}
 							alt={state.imgAlt}
