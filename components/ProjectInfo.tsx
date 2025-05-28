@@ -38,7 +38,7 @@ const ProjectInfo = () => {
 								"opacity-0": !isImageLoaded,
 								"opacity-100": isImageLoaded,
 							})}
-							onLoadingComplete={() => setIsImageLoaded(true)}
+							onLoad={() => setIsImageLoaded(true)}
 						/>
 					</div>
 					<div className="flex xsm:flex-col flex-row md:flex-col gap-8 justify-between">
