@@ -21,7 +21,7 @@ const Home = () => {
 			</main>
 
 			{/* Right sidebar */}
-			<aside className="xl:w-[240px] xl:sticky xl:top-[110px] xl:max-h-[calc(100vh-110px)] xl:overflow-y-auto xl:self-start order-1 xl:order-3 ">
+			<aside className="hidden xl:block xl:w-[240px] xl:sticky xl:top-[110px] xl:max-h-[calc(100vh-110px)] xl:overflow-y-auto xl:self-start order-1 xl:order-3 ">
 				<Tracker sectionActive={sectionActive} />
 			</aside>
 		</div>
