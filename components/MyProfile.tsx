@@ -1,6 +1,4 @@
-import Link from "next/link";
 import { MdOutlineEmail } from "react-icons/md";
-import { CiLinkedin } from "react-icons/ci";
 import { FaGithub } from "react-icons/fa";
 import { CiUser } from "react-icons/ci";
 
@@ -40,14 +38,6 @@ const MyProfile = () => {
 						<FaGithub />
 						Github
 					</a>
-					{/* <a
-						href=""
-						target="_blank"
-						className="flex items-center gap-2 text-2xl hover:underline transition-all duration-300"
-					>
-						<CiLinkedin />
-						Linkedin
-					</a> */}
 				</div>
 			</div>
 		</div>
