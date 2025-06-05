@@ -23,27 +23,31 @@ const MyProfile = () => {
 					</div>
 				</div>
 				<div className="flex flex-col gap-5  md:mt-[52px] order-2 md:order-3 xl:mt-0">
-					<Link
-						href=""
+					<a
+						href="mailto:simeklapan@gmail.com"
+						target="_blank"
+						rel="noopener noreferrer"
 						className="flex items-center gap-2 text-2xl hover:underline transition-all duration-300"
 					>
 						<MdOutlineEmail />
 						Email
-					</Link>
-					<Link
-						href=""
+					</a>
+					<a
+						href="https://github.com/Tessio94"
+						target="_blank"
 						className="flex items-center gap-2 text-2xl hover:underline transition-all duration-300"
 					>
 						<FaGithub />
 						Github
-					</Link>
-					<Link
+					</a>
+					{/* <a
 						href=""
+						target="_blank"
 						className="flex items-center gap-2 text-2xl hover:underline transition-all duration-300"
 					>
 						<CiLinkedin />
 						Linkedin
-					</Link>
+					</a> */}
 				</div>
 			</div>
 		</div>
