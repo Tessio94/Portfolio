@@ -183,6 +183,10 @@ const Description = ({
 							<RiArrowRightDoubleFill /> click + sign to get more info{" "}
 							<RiArrowLeftDoubleFill />
 						</small>
+						<small className="text-red-500">
+							There may be a short wait for the project to load, as all of them
+							are hosted using free services.*
+						</small>
 						<div className="grid xsm:grid-cols-1 grid-cols-2 lg:grid-cols-3 gap-3">
 							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/insignia.jpg')] xl:bg-[url('/insignia_xl.jpg')] bg-cover bg-no-repeat  group">
 								<div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50">
@@ -334,13 +338,20 @@ const Description = ({
 												payload: {
 													title: "Bus app",
 													img: "/bus_info.jpg",
-													stack: ["Next", "Tailwind", "PostgreSQL"],
+													stack: [
+														"Next",
+														"TypeScript",
+														"Tailwind",
+														"PostgreSQL",
+													],
+													link: "https://busapp-75xe.onrender.com/",
 													description:
-														"I built a website for my friend’s physiotherapy clinic using React for dynamic components and Tailwind CSS for styling. React Router DOM handled navigation between pages. I integrated EmailJS to enable contact form submissions directly to email, creating a responsive, professional, and functional online presence tailored to his clinic's needs.",
+														"I developed a full-stack bus reservation website where users can select destinations, choose travel dates, view available bus lines, and reserve seats in real time. Built with Next.js and TypeScript for a robust frontend and backend, styled using Tailwind CSS for a modern UI, and powered by PostgreSQL for secure and scalable data management, the platform offers a smooth and intuitive booking experience.",
 													points: [
-														"client side navigation with react-router-dom",
-														"Meta tags implementation using React Helmet",
-														"email form using emailjs library",
+														"Full-stack development using Next.js (App Router) and TypeScript",
+														"Dynamic routing and server-side rendering for optimal performance",
+														"Seat reservation system with availability tracking",
+														"PostgreSQL integration for persistent booking and schedule data",
 													],
 												},
 											})
