@@ -61,11 +61,18 @@ const ProjectInfo = () => {
 				<div className="basis-2/3 flex flex-col gap-4">
 					<h5 className="text-2xl bold underline">{state.title}</h5>
 					{state.title === "Insignia" && (
-						<small className="italic text-red-500">
-							After clicking "Rezerviraj termin", there might be a short delay
-							while waiting for the backend response due to free hosting
-							services.
-						</small>
+						<>
+							<small className="italic text-red-500">
+								*After clicking "Rezerviraj termin", there might be a short
+								delay while waiting for the backend response due to free hosting
+								services.
+							</small>
+							<small className="italic text-red-500">
+								*Access admin panel on /admin, password for all admins is
+								password123, use name of therapist and @insignia.hr (e.g.
+								ana@insignia.hr)
+							</small>
+						</>
 					)}
 					<p className="mt-4">{state.description}</p>
 					<p className="font-bold underline">
