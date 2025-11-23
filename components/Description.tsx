@@ -142,9 +142,10 @@ const Description = ({
           <div className="flex flex-col gap-5 py-3" id="futuro">
             <h4 className="text-2xl font-bold">Futuro projects</h4>
             <div className="text-xl">
-              I’ve been working for about a year at Futuro Internet Studio and
-              Web Design, where we focus on building tailored web solutions for
-              clients. We primarily use WinterCMS to develop flexible content
+              I’ve been working at Futuro Internet Studio and Web Design since
+              May of 2024. We focus on building tailored web solutions for
+              clients. We primarily use WinterCMS (HTML, Twig, Jquery,
+              Bootstrap, Laravel backend, MySQL) to develop flexible content
               management systems that are easy for clients to use and maintain.
               One of our most exciting current projects is designing a new
               website for the City of Zadar, alongside various other
@@ -159,22 +160,14 @@ const Description = ({
               In my free time, I actively work on personal projects to sharpen
               my skills and explore new technologies—especially on the backend
               side of development. I enjoy experimenting with different stacks
-              and learning through hands-on practice. One of my personal
-              achievements is building and launching{" "}
-              <strong>
-                <Link
-                  href="https://www.prehabilitationtherapycenter.hr"
-                  target="_blank"
-                  className="underline hover:text-slate-400 active:text-slate-400 focus:text-slate-400 transition-all duration-300"
-                >
-                  prehabilitationtherapycenter.hr
-                </Link>
-              </strong>
-              , a fully functional website that is currently in production.
+              and learning through hands-on practice. Most of my personal
+              project i listed are built with Next.js, React or React + Node if
+              it is web app.
             </div>
           </div>
           <div className="flex flex-col gap-5 py-3" id="projekti">
-            <h4 className="text-2xl font-bold">My projects</h4>
+            <h4 className="text-2xl font-bold">My personal projects</h4>
+            <h4 className="text-xl font-bold">Website</h4>
             <small className="hidden  italic text-xl lg:flex items-center gap-2 text-red-500">
               <RiArrowRightDoubleFill /> hover over project image and then click
               + sign to get more info <RiArrowLeftDoubleFill />
@@ -183,41 +176,62 @@ const Description = ({
               <RiArrowRightDoubleFill /> click + sign to get more info{" "}
               <RiArrowLeftDoubleFill />
             </small>
-            <small className="text-red-500">
+            {/* <small className="text-red-500">
               There may be a short wait for the project to load, as all of them
               are hosted using free services.*
-            </small>
+            </small> */}
             <div className="grid xsm:grid-cols-1 grid-cols-2 lg:grid-cols-3 gap-3">
-              <div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/insignia.jpg')] xl:bg-[url('/insignia_xl.jpg')] bg-cover bg-no-repeat  group">
-                <div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50">
+              <div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/plan41.jpg')] xl:bg-[url('/plan41_xl.jpg')] bg-cover group bg-no-repeat ">
+                <div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50 lg:pointer-events-none lg:group-hover:pointer-events-auto">
                   <p className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 lg:rounded-none lg:border-0 lg:p-0 bg-slate-200 rounded-2xl py-1 px-2 font text-xl text-center ">
-                    Insignia
+                    Plan 41
                   </p>
                   <div
-                    className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 bg-slate-200 text-2xl w-[40px] h-[40px] rounded-full  lg:border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 active:bg-slate-800 focus:bg-slate-800 active:text-slate-200 focus:text-slate-200 transition-all duration-500text-slate-800  duration-500"
+                    className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 bg-slate-200 text-2xl w-[40px] h-[40px] rounded-full  lg:border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 active:bg-slate-800 focus:bg-slate-800 active:text-slate-200 focus:text-slate-200 transition-all duration-500"
                     onClick={() =>
                       dispatch({
                         type: "SET_PROJECT_DATA",
                         payload: {
-                          title: "Insignia",
-                          img: "/insignia_info.jpg",
-                          stack: [
-                            "React",
-                            "Tailwind",
-                            "Node",
-                            "Express",
-                            "PostgreSQL",
-                          ],
-                          link: "https://physio-app-frontend.onrender.com/",
+                          title: "Plan 41",
+                          img: "/plan41_info.jpg",
+                          stack: ["Next.js", "Tailwind"],
+                          link: "https://plan41.netlify.app/",
                           description:
-                            "I built a physiotherapy web app with full booking functionality using React, Tailwind CSS, and shadcn/ui for a modern, responsive UI. Users can choose therapists, select services, and book appointments up to two weeks in advance. I used Node.js and Express to build the backend API, with PostgreSQL managing booking data, therapists, and availability. React Router DOM handled navigation, and an admin panel lets staff manage appointments and clinic resources efficiently.",
+                            "I built a professional website for Business Consulting Trade Plan 41 using Next.js to deliver fast, SEO-friendly, and scalable pages. Styled with Tailwind CSS, the site maintains a clean, modern, and fully responsive design. I implemented Nodemailer to handle email functionality, enabling seamless and secure message delivery directly from the contact form. The result is a streamlined, efficient online presence that effectively represents the consulting services offered.",
                           points: [
-                            "choose from 6 therapist that each provide 3 different services",
-                            "book appointment two weeks in advance",
-                            "the user needs to log in to book",
-                            "login, register, Google 0auth, Facebook 0auth implemented",
-                            "full admin panel with CRUD functionality for admin",
-                            "data dashboard for admins",
+                            "Email form using nodemailer",
+                            "Toast confiramtion using sonner",
+                            "Transitions using motion react",
+                          ],
+                        },
+                      })
+                    }
+                  >
+                    +
+                  </div>
+                </div>
+              </div>
+              <div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/nlstech.jpg')] xl:bg-[url('/nlstech_xl.jpg')] bg-cover group bg-no-repeat ">
+                <div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50 lg:pointer-events-none lg:group-hover:pointer-events-auto">
+                  <p className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 lg:rounded-none lg:border-0 lg:p-0 bg-slate-200 rounded-2xl py-1 px-2 font text-xl text-center ">
+                    NLS Tech
+                  </p>
+                  <div
+                    className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 bg-slate-200 text-2xl w-[40px] h-[40px] rounded-full  lg:border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 active:bg-slate-800 focus:bg-slate-800 active:text-slate-200 focus:text-slate-200 transition-all duration-500"
+                    onClick={() =>
+                      dispatch({
+                        type: "SET_PROJECT_DATA",
+                        payload: {
+                          title: "NLS Tech",
+                          img: "/nlstech_info.jpg",
+                          stack: ["Next.js", "Tailwind"],
+                          link: "https://nlstech.pro/",
+                          description:
+                            "I built a website for laser cleaning business using Next.js and Tailwind CSS for styling. I used nodemailer to enable contact form submissions directly to email.",
+                          points: [
+                            "Email form using nodemailer",
+                            "Toast confiramtion using sonner",
+                            "Transitions using motion react",
                           ],
                         },
                       })
@@ -228,7 +242,7 @@ const Description = ({
                 </div>
               </div>
               <div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/prehab.jpg')] xl:bg-[url('/prehab_xl.jpg')] bg-cover group bg-no-repeat ">
-                <div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50">
+                <div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50 lg:pointer-events-none lg:group-hover:pointer-events-auto">
                   <p className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 lg:rounded-none lg:border-0 lg:p-0 bg-slate-200 rounded-2xl py-1 px-2 font text-xl text-center ">
                     Prehab
                   </p>
@@ -258,7 +272,7 @@ const Description = ({
                 </div>
               </div>
               <div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/lito.jpg')] xl:bg-[url('/lito_xl.jpg')] bg-cover group bg-no-repeat ">
-                <div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50">
+                <div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50 lg:pointer-events-none lg:group-hover:pointer-events-auto">
                   <p className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 lg:rounded-none lg:border-0 lg:p-0 bg-slate-200 rounded-2xl py-1 px-2 font text-xl text-center ">
                     Lito adventure
                   </p>
@@ -294,7 +308,7 @@ const Description = ({
                 </div>
               </div>
               <div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/dynamic_map.jpg')] xl:bg-[url('/dynamic_map_xl.jpg')] bg-cover bg-no-repeat group ">
-                <div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50">
+                <div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50 lg:pointer-events-none lg:group-hover:pointer-events-auto">
                   <p className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 lg:rounded-none lg:border-0 lg:p-0 bg-slate-200 rounded-2xl py-1 px-2 font text-xl text-center ">
                     Dynamic parking map Zadar
                   </p>
@@ -333,25 +347,79 @@ const Description = ({
                   </div>
                 </div>
               </div>
+            </div>
+            <h4 className="text-xl font-bold">Web app</h4>
+            <div className="text-red-500 text-sm">
+              The web apps are not yet in production. Will publish them on vps
+              as Docker containers soon. Check the code on my github account:{" "}
+              <a
+                href="https://github.com/Tessio94"
+                target="_blank"
+                className="underline font-semibold text-md"
+              >
+                https://github.com/Tessio94
+              </a>
+              *
+            </div>
+            <ul className="list-disc ml-5 text-red-500 underline">
+              <li>
+                <a
+                  href="https://github.com/Tessio94/BoulderCMS"
+                  target="_blank"
+                >
+                  BoulderCMS
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="https://github.com/Tessio94/physio-app"
+                  target="_blank"
+                >
+                  Physio-app
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/Tessio94/BusApp" target="_blank">
+                  BusApp
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/Tessio94/Todo-App" target="_blank">
+                  Todo-App
+                </a>
+              </li>
+            </ul>
+            <div className="grid xsm:grid-cols-1 grid-cols-2 lg:grid-cols-3 gap-3">
               <div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/boulder.jpg')] xl:bg-[url('/boulder_xl.jpg')] bg-cover bg-no-repeat  group">
-                <div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50">
+                <div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50 lg:pointer-events-none lg:group-hover:pointer-events-auto">
                   <p className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 lg:rounded-none lg:border-0 lg:p-0 bg-slate-200 rounded-2xl py-1 px-2 font text-xl text-center ">
-                    Boulder
+                    Bouldermeet
                   </p>
                   <div
-                    className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 bg-slate-200 text-2xl w-[40px] h-[40px] rounded-full  lg:border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 active:bg-slate-800 focus:bg-slate-800 active:text-slate-200 focus:text-slate-200 transition-all duration-500"
+                    className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 bg-slate-200 text-2xl w-[40px] h-[40px] rounded-full  lg:border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 active:bg-slate-800 focus:bg-slate-800 active:text-slate-200 focus:text-slate-200 transition-all duration-500text-slate-800  duration-500"
                     onClick={() =>
                       dispatch({
                         type: "SET_PROJECT_DATA",
                         payload: {
-                          title: "Boulder",
-                          img: "/boulder_info.jpg",
-                          stack: ["Next", "Tailwind"],
-                          link: "https://boulder-app.netlify.app/",
+                          title: "Bouldermeet",
+                          img: "/Boulder_info.jpg",
+                          stack: [
+                            "PayloadCMS",
+                            "Next.js",
+                            "Typescrript",
+                            "PostgreSQL",
+                            "Tailwind",
+                          ],
+                          link: "https://physio-app-frontend.onrender.com/",
                           description:
-                            "I built a website for my friend’s physiotherapy clinic using React for dynamic components and Tailwind CSS for styling. React Router DOM handled navigation between pages. I integrated EmailJS to enable contact form submissions directly to email, creating a responsive, professional, and functional online presence tailored to his clinic's needs.",
+                            "I've built a web app for boulder climbing competitions. The app is made using PayloadmCMS (CMS built on Next.js). The clients are able to log in using their account, apply for events, submit they results, check the news. Also the admin panel allows owner of the site to publish events, news, and keep scoreboards on different events. Every event can have multiple categories (male, women and based on age), multiple routes with multiple stages. Clients are able to see history of their results and all the events they attended to.",
                           points: [
-                            "german-english translation using next-intl",
+                            "create an account and log in",
+                            "apply for events and submit results",
+                            "check resutls history",
+                            "create everything on payloadCMS admin panel",
+                            "postgreSQL as database",
                           ],
                         },
                       })
@@ -361,33 +429,36 @@ const Description = ({
                   </div>
                 </div>
               </div>
-              <div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/bus.jpg')] xl:bg-[url('/bus_xl.jpg')] bg-cover bg-no-repeat  group">
-                <div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50">
+              <div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/insignia.jpg')] xl:bg-[url('/insignia_xl.jpg')] bg-cover bg-no-repeat  group">
+                <div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50 lg:pointer-events-none lg:group-hover:pointer-events-auto">
                   <p className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 lg:rounded-none lg:border-0 lg:p-0 bg-slate-200 rounded-2xl py-1 px-2 font text-xl text-center ">
-                    Bus app
+                    Insignia
                   </p>
                   <div
-                    className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 bg-slate-200 text-2xl w-[40px] h-[40px] rounded-full  lg:border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 active:bg-slate-800 focus:bg-slate-800 active:text-slate-200 focus:text-slate-200 transition-all duration-500"
+                    className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 bg-slate-200 text-2xl w-[40px] h-[40px] rounded-full  lg:border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 active:bg-slate-800 focus:bg-slate-800 active:text-slate-200 focus:text-slate-200 transition-all duration-500text-slate-800  duration-500"
                     onClick={() =>
                       dispatch({
                         type: "SET_PROJECT_DATA",
                         payload: {
-                          title: "Bus app",
-                          img: "/bus_info.jpg",
+                          title: "Insignia",
+                          img: "/insignia_info.jpg",
                           stack: [
-                            "Next",
-                            "TypeScript",
+                            "React",
                             "Tailwind",
+                            "Node",
+                            "Express",
                             "PostgreSQL",
                           ],
-                          link: "https://busapp-75xe.onrender.com/",
+                          link: "https://physio-app-frontend.onrender.com/",
                           description:
-                            "I developed a full-stack bus reservation website where users can select destinations, choose travel dates, view available bus lines, and reserve seats in real time. Built with Next.js and TypeScript for a robust frontend and backend, styled using Tailwind CSS for a modern UI, and powered by PostgreSQL for secure and scalable data management, the platform offers a smooth and intuitive booking experience.",
+                            "I built a physiotherapy web app with full booking functionality using React, Tailwind CSS, and shadcn/ui for a modern, responsive UI. Users can choose therapists, select services, and book appointments up to two weeks in advance. I used Node.js and Express to build the backend API, with PostgreSQL managing booking data, therapists, and availability. React Router DOM handled navigation, and an admin panel lets staff manage appointments and clinic resources efficiently.",
                           points: [
-                            "Full-stack development using Next.js (App Router) and TypeScript",
-                            "Dynamic routing and server-side rendering for optimal performance",
-                            "Seat reservation system with availability tracking",
-                            "PostgreSQL integration for persistent booking and schedule data",
+                            "choose from 6 therapist that each provide 3 different services",
+                            "book appointment two weeks in advance",
+                            "the user needs to log in to book",
+                            "login, register, Google 0auth, Facebook 0auth implemented",
+                            "full admin panel with CRUD functionality for admin",
+                            "data dashboard for admins",
                           ],
                         },
                       })
@@ -397,8 +468,9 @@ const Description = ({
                   </div>
                 </div>
               </div>
+
               <div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/todo.jpg')] xl:bg-[url('/todo_xl.jpg')] bg-cover bg-no-repeat  group">
-                <div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50">
+                <div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50 lg:pointer-events-none lg:group-hover:pointer-events-auto">
                   <p className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 lg:rounded-none lg:border-0 lg:p-0 bg-slate-200 rounded-2xl py-1 px-2 font text-xl text-center ">
                     ToDo
                   </p>
@@ -427,10 +499,10 @@ const Description = ({
                   </div>
                 </div>
               </div>
-              <div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/parallax.jpg')] xl:bg-[url('/parallax_xl.jpg')] bg-cover bg-no-repeat  group">
-                <div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50">
+              <div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/bus.jpg')] xl:bg-[url('/bus_xl.jpg')] bg-cover bg-no-repeat  group">
+                <div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50 lg:pointer-events-none lg:group-hover:pointer-events-auto">
                   <p className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 lg:rounded-none lg:border-0 lg:p-0 bg-slate-200 rounded-2xl py-1 px-2 font text-xl text-center ">
-                    Parallax
+                    Bus app
                   </p>
                   <div
                     className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 bg-slate-200 text-2xl w-[40px] h-[40px] rounded-full  lg:border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 active:bg-slate-800 focus:bg-slate-800 active:text-slate-200 focus:text-slate-200 transition-all duration-500"
@@ -438,44 +510,22 @@ const Description = ({
                       dispatch({
                         type: "SET_PROJECT_DATA",
                         payload: {
-                          title: "Parallax",
-                          img: "/parallax_info.jpg",
-                          stack: ["JS", "CSS"],
-                          link: "https://atelj-parallax.netlify.app/",
-                          description:
-                            "I built an example website on my job that has parallax effect while scrolling the homepage.",
-                          points: [
-                            "parallax effect while scrolling the homepage",
-                            "image slider loop",
+                          title: "Bus app",
+                          img: "/bus_info.jpg",
+                          stack: [
+                            "Next",
+                            "TypeScript",
+                            "Tailwind",
+                            "PostgreSQL",
                           ],
-                        },
-                      })
-                    }
-                  >
-                    +
-                  </div>
-                </div>
-              </div>
-              <div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/zadar.jpg')] xl:bg-[url('/zadar_xl.jpg')] bg-cover bg-no-repeat  group">
-                <div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50">
-                  <p className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 lg:rounded-none lg:border-0 lg:p-0 bg-slate-200 rounded-2xl py-1 px-2 font text-xl text-center ">
-                    Zadar Boat Tours
-                  </p>
-                  <div
-                    className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 bg-slate-200 text-2xl w-[40px] h-[40px] rounded-full  lg:border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 active:bg-slate-800 focus:bg-slate-800 active:text-slate-200 focus:text-slate-200 transition-all duration-500"
-                    onClick={() =>
-                      dispatch({
-                        type: "SET_PROJECT_DATA",
-                        payload: {
-                          title: "Zadar Boat Tours",
-                          img: "/zadar_info.jpg",
-                          stack: ["React"],
-                          link: "https://zadarboattours.netlify.app/",
+                          link: "https://busapp-75xe.onrender.com/",
                           description:
-                            "One of the first example website i built using react. This website is not responsive.",
+                            "I developed a full-stack bus reservation website where users can select destinations, choose travel dates, view available bus lines, and reserve seats in real time. Built with Next.js and TypeScript for a robust frontend and backend, styled using Tailwind CSS for a modern UI, and powered by PostgreSQL for secure and scalable data management, the platform offers a smooth and intuitive booking experience.",
                           points: [
-                            "manipulating dom using react",
-                            "interactivity of some components",
+                            "Full-stack development using Next.js (App Router) and TypeScript",
+                            "Dynamic routing and server-side rendering for optimal performance",
+                            "Seat reservation system with availability tracking",
+                            "PostgreSQL integration for persistent booking and schedule data",
                           ],
                         },
                       })
