@@ -392,50 +392,6 @@ const Description = ({
 									</div>
 								</div>
 							</div>
-						</div>
-						<div className="text-red-500 text-sm">
-							The rest of web apps are not yet in production. Will publish them
-							on vps as Docker containers soon. Check the code on my github
-							account:{" "}
-							<a
-								href="https://github.com/Tessio94"
-								target="_blank"
-								className="underline font-semibold text-md"
-							>
-								https://github.com/Tessio94
-							</a>
-							*
-						</div>
-						<ul className="list-disc ml-5 text-red-500 underline">
-							<li>
-								<a
-									href="https://github.com/Tessio94/BoulderCMS"
-									target="_blank"
-								>
-									BoulderCMS
-								</a>
-							</li>
-
-							<li>
-								<a
-									href="https://github.com/Tessio94/physio-app"
-									target="_blank"
-								>
-									Physio-app
-								</a>
-							</li>
-							<li>
-								<a href="https://github.com/Tessio94/BusApp" target="_blank">
-									BusApp
-								</a>
-							</li>
-							<li>
-								<a href="https://github.com/Tessio94/Todo-App" target="_blank">
-									Todo-App
-								</a>
-							</li>
-						</ul>
-						<div className="grid xsm:grid-cols-1 grid-cols-2 lg:grid-cols-3 gap-3">
 							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/insignia.jpg')] xl:bg-[url('/insignia_xl.jpg')] bg-cover bg-no-repeat  group">
 								<div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50 lg:pointer-events-none lg:group-hover:pointer-events-auto">
 									<p className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 lg:rounded-none lg:border-0 lg:p-0 bg-slate-200 rounded-2xl py-1 px-2 font text-xl text-center ">
@@ -456,7 +412,7 @@ const Description = ({
 														"Express",
 														"PostgreSQL",
 													],
-													link: "https://physio-app-frontend.onrender.com/",
+													link: "https://app2.tessio94.com/",
 													description:
 														"I built a physiotherapy web app with full booking functionality using React, Tailwind CSS, and shadcn/ui for a modern, responsive UI. Users can choose therapists, select services, and book appointments up to two weeks in advance. I used Node.js and Express to build the backend API, with PostgreSQL managing booking data, therapists, and availability. React Router DOM handled navigation, and an admin panel lets staff manage appointments and clinic resources efficiently.",
 													points: [
@@ -475,7 +431,6 @@ const Description = ({
 									</div>
 								</div>
 							</div>
-
 							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/todo.jpg')] xl:bg-[url('/todo_xl.jpg')] bg-cover bg-no-repeat  group">
 								<div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50 lg:pointer-events-none lg:group-hover:pointer-events-auto">
 									<p className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 lg:rounded-none lg:border-0 lg:p-0 bg-slate-200 rounded-2xl py-1 px-2 font text-xl text-center ">
@@ -490,7 +445,7 @@ const Description = ({
 													title: "Todo",
 													img: "/todo_info.jpg",
 													stack: ["React", "Tailwind", "Node", "Postgresql"],
-													link: "https://todo-app-1-anpb.onrender.com/",
+													link: "https://app1.tessio94.com/",
 													description:
 														"I developed a to-do application using React for the frontend and Node.js with Express for the backend. The app features full CRUD functionality, allowing users to create, read, update, and delete tasks in real-time. PostgreSQL handles data persistence, ensuring tasks are stored reliably and efficiently. The interface is clean and responsive, built with Tailwind CSS, and provides a smooth user experience for managing daily tasks.",
 													points: [
@@ -543,6 +498,46 @@ const Description = ({
 								</div>
 							</div>
 						</div>
+						<div className="text-red-500 text-sm">
+							Check the code on my github account:{" "}
+							<a
+								href="https://github.com/Tessio94"
+								target="_blank"
+								className="underline font-semibold text-md"
+							>
+								https://github.com/Tessio94
+							</a>
+							*
+						</div>
+						<ul className="list-disc ml-5 text-red-500 underline">
+							<li>
+								<a
+									href="https://github.com/Tessio94/BoulderCMS"
+									target="_blank"
+								>
+									BoulderCMS
+								</a>
+							</li>
+
+							<li>
+								<a
+									href="https://github.com/Tessio94/physio-app"
+									target="_blank"
+								>
+									Physio-app
+								</a>
+							</li>
+							<li>
+								<a href="https://github.com/Tessio94/BusApp" target="_blank">
+									BusApp
+								</a>
+							</li>
+							<li>
+								<a href="https://github.com/Tessio94/Todo-App" target="_blank">
+									Todo-App
+								</a>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
