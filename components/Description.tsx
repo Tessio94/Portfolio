@@ -422,6 +422,7 @@ const Description = ({
 														"login, register, Google 0auth, Facebook 0auth implemented",
 														"full admin panel with CRUD functionality for admin",
 														"data dashboard for admins",
+														"published using docker, nginx on vps",
 													],
 												},
 											})
@@ -452,6 +453,7 @@ const Description = ({
 														"client side navigation with react-router-dom",
 														"used react context to share and manipulate state through components",
 														"full CRUD functionality",
+														"published using docker, nginx on vps",
 													],
 												},
 											})
