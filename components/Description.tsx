@@ -257,11 +257,12 @@ const Description = ({
 													stack: ["React", "Tailwind"],
 													link: "https://prehabilitationtherapycenter.hr/",
 													description:
-														"I built a website for my friend’s physiotherapy clinic using React for dynamic components and Tailwind CSS for styling. React Router DOM handled navigation between pages. I integrated EmailJS to enable contact form submissions directly to email, creating a responsive, professional, and functional online presence tailored to his clinic's needs.",
+														"I built a website for my friend’s physiotherapy clinic using React for dynamic components and Tailwind CSS for styling. React Router DOM handled navigation between pages. I integrated nodemailer 0auth2 to enable contact form submissions directly to email, creating a responsive, professional, and functional online presence tailored to his clinic's needs.",
 													points: [
 														"client side navigation with react-router-dom",
 														"Meta tags implementation using React Helmet",
-														"email form using emailjs library",
+														"implemented netlify serverless functions for backend",
+														"email form using nodemailer-0auth2-gmail",
 													],
 												},
 											})
