@@ -181,6 +181,37 @@ const Description = ({
               are hosted using free services.*
             </small> */}
 						<div className="grid xsm:grid-cols-1 grid-cols-2 lg:grid-cols-3 gap-3">
+							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/prehab.jpg')] xl:bg-[url('/prehab_xl.jpg')] bg-cover group bg-no-repeat ">
+								<div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50 lg:pointer-events-none lg:group-hover:pointer-events-auto">
+									<p className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 lg:rounded-none lg:border-0 lg:p-0 bg-slate-200 rounded-2xl py-1 px-2 font text-xl text-center ">
+										Prehab
+									</p>
+									<div
+										className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 bg-slate-200 text-2xl w-[40px] h-[40px] rounded-full  lg:border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 active:bg-slate-800 focus:bg-slate-800 active:text-slate-200 focus:text-slate-200 transition-all duration-500"
+										onClick={() =>
+											dispatch({
+												type: "SET_PROJECT_DATA",
+												payload: {
+													title: "Prehab",
+													img: "/prehab_info.jpg",
+													stack: ["React", "Tailwind"],
+													link: "https://prehabilitationtherapycenter.hr/",
+													description:
+														"I built a website for my friend’s physiotherapy clinic using React for dynamic components and Tailwind CSS for styling. React Router DOM handled navigation between pages. I integrated nodemailer 0auth2 to enable contact form submissions directly to email, creating a responsive, professional, and functional online presence tailored to his clinic's needs.",
+													points: [
+														"client side navigation with react-router-dom",
+														"Meta tags implementation using React Helmet",
+														"implemented netlify serverless functions for backend",
+														"email form using nodemailer-0auth2-gmail",
+													],
+												},
+											})
+										}
+									>
+										+
+									</div>
+								</div>
+							</div>
 							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/plan41.jpg')] xl:bg-[url('/plan41_xl.jpg')] bg-cover group bg-no-repeat ">
 								<div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50 lg:pointer-events-none lg:group-hover:pointer-events-auto">
 									<p className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 lg:rounded-none lg:border-0 lg:p-0 bg-slate-200 rounded-2xl py-1 px-2 font text-xl text-center ">
@@ -241,37 +272,7 @@ const Description = ({
 									</div>
 								</div>
 							</div>
-							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/prehab.jpg')] xl:bg-[url('/prehab_xl.jpg')] bg-cover group bg-no-repeat ">
-								<div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50 lg:pointer-events-none lg:group-hover:pointer-events-auto">
-									<p className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 lg:rounded-none lg:border-0 lg:p-0 bg-slate-200 rounded-2xl py-1 px-2 font text-xl text-center ">
-										Prehab
-									</p>
-									<div
-										className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 bg-slate-200 text-2xl w-[40px] h-[40px] rounded-full  lg:border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 active:bg-slate-800 focus:bg-slate-800 active:text-slate-200 focus:text-slate-200 transition-all duration-500"
-										onClick={() =>
-											dispatch({
-												type: "SET_PROJECT_DATA",
-												payload: {
-													title: "Prehab",
-													img: "/prehab_info.jpg",
-													stack: ["React", "Tailwind"],
-													link: "https://prehabilitationtherapycenter.hr/",
-													description:
-														"I built a website for my friend’s physiotherapy clinic using React for dynamic components and Tailwind CSS for styling. React Router DOM handled navigation between pages. I integrated nodemailer 0auth2 to enable contact form submissions directly to email, creating a responsive, professional, and functional online presence tailored to his clinic's needs.",
-													points: [
-														"client side navigation with react-router-dom",
-														"Meta tags implementation using React Helmet",
-														"implemented netlify serverless functions for backend",
-														"email form using nodemailer-0auth2-gmail",
-													],
-												},
-											})
-										}
-									>
-										+
-									</div>
-								</div>
-							</div>
+
 							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/lito.jpg')] xl:bg-[url('/lito_xl.jpg')] bg-cover group bg-no-repeat ">
 								<div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50 lg:pointer-events-none lg:group-hover:pointer-events-auto">
 									<p className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 lg:rounded-none lg:border-0 lg:p-0 bg-slate-200 rounded-2xl py-1 px-2 font text-xl text-center ">
@@ -419,10 +420,12 @@ const Description = ({
 													points: [
 														"choose from 6 therapist that each provide 3 different services",
 														"book appointment two weeks in advance",
+														"implemented cron job to simulate occupied appointments.",
 														"the user needs to log in to book",
 														"login, register, Google 0auth, Facebook 0auth implemented",
 														"full admin panel with CRUD functionality for admin",
 														"data dashboard for admins",
+														"UI skeletons and sonner toasts",
 														"deployed using docker, nginx on vps",
 													],
 												},
@@ -449,7 +452,7 @@ const Description = ({
 													stack: ["React", "Tailwind", "Node", "Postgresql"],
 													link: "https://app1.tessio94.com/",
 													description:
-														"I developed a to-do application using React for the frontend and Node.js with Express for the backend. The app features full CRUD functionality, allowing users to create, read, update, and delete tasks in real-time. PostgreSQL handles data persistence, ensuring tasks are stored reliably and efficiently. The interface is clean and responsive, built with Tailwind CSS, and provides a smooth user experience for managing daily tasks.",
+														"As one of my first projects I developed a simple to-do application using React for the frontend and Node.js with Express for the backend. The app features full CRUD functionality, allowing users to create, read, update, and delete tasks in real-time. PostgreSQL handles data persistence, ensuring tasks are stored reliably and efficiently. The interface is clean and responsive, built with Tailwind CSS, and provides a smooth user experience for managing daily tasks.",
 													points: [
 														"client side navigation with react-router-dom",
 														"used react context to share and manipulate state through components",
@@ -464,7 +467,7 @@ const Description = ({
 									</div>
 								</div>
 							</div>
-							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/bus.jpg')] xl:bg-[url('/bus_xl.jpg')] bg-cover bg-no-repeat  group">
+							{/* <div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/bus.jpg')] xl:bg-[url('/bus_xl.jpg')] bg-cover bg-no-repeat  group">
 								<div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50 lg:pointer-events-none lg:group-hover:pointer-events-auto">
 									<p className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 lg:rounded-none lg:border-0 lg:p-0 bg-slate-200 rounded-2xl py-1 px-2 font text-xl text-center ">
 										Bus app
@@ -499,7 +502,7 @@ const Description = ({
 										+
 									</div>
 								</div>
-							</div>
+							</div> */}
 						</div>
 						<div className="text-red-500 text-sm">
 							Check the code on my github account:{" "}
@@ -530,11 +533,11 @@ const Description = ({
 									Physio-app
 								</a>
 							</li>
-							<li>
+							{/* <li>
 								<a href="https://github.com/Tessio94/BusApp" target="_blank">
 									BusApp
 								</a>
-							</li>
+							</li> */}
 							<li>
 								<a href="https://github.com/Tessio94/Todo-App" target="_blank">
 									Todo-App

@@ -64,8 +64,7 @@ const ProjectInfo = () => {
 						<>
 							<small className="italic text-red-500">
 								*After clicking "Rezerviraj termin", choose service or service
-								and therapist to book your appointment. Will insert cron job
-								soon to simulate occupied appointments. To book an appointment
+								and therapist to book your appointment. To book an appointment
 								you are required to register/log in.
 							</small>
 							<small className="italic text-red-500">
