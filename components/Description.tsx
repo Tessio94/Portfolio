@@ -31,6 +31,9 @@ import {
 	SiRender,
 	SiPostman,
 	SiSupabase,
+	SiLinuxserver,
+	SiUbuntu,
+	SiDocker,
 } from "react-icons/si";
 import { PiFileSqlFill } from "react-icons/pi";
 import { FaGitAlt } from "react-icons/fa";
@@ -682,7 +685,7 @@ const Description = ({
 								</ul>
 							</div>
 							<div>
-								<p>Hosting</p>
+								<p>Deployment & Infrastructure</p>
 								<ul className="ml-6 w-[270px]">
 									<li className="language-list">
 										Cpanel <SiCpanel />
@@ -691,7 +694,10 @@ const Description = ({
 										Netlify <SiNetlify />
 									</li>
 									<li className="language-list">
-										Supabase <SiSupabase />
+										Ubuntu <SiUbuntu />
+									</li>
+									<li className="language-list">
+										Docker <SiDocker />
 									</li>
 									<li className="language-list">
 										Render <SiRender />
