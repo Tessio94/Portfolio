@@ -30,8 +30,6 @@ import {
 	SiNetlify,
 	SiRender,
 	SiPostman,
-	SiSupabase,
-	SiLinuxserver,
 	SiUbuntu,
 	SiDocker,
 } from "react-icons/si";
