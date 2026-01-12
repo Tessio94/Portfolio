@@ -302,7 +302,6 @@ const Description = ({
 									</div>
 								</div>
 							</div>
-
 							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/lito.jpg')] xl:bg-[url('/lito_xl.jpg')] bg-cover group bg-no-repeat ">
 								<div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50 lg:pointer-events-none lg:group-hover:pointer-events-auto">
 									<p className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 lg:rounded-none lg:border-0 lg:p-0 bg-slate-200 rounded-2xl py-1 px-2 font text-xl text-center ">
@@ -382,48 +381,6 @@ const Description = ({
 						</div>
 						<h4 className="text-xl font-bold">Web app</h4>
 						<div className="grid xsm:grid-cols-1 grid-cols-2 lg:grid-cols-3 gap-3">
-							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/boulder.jpg')] xl:bg-[url('/boulder_xl.jpg')] bg-cover bg-no-repeat  group">
-								<div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50 lg:pointer-events-none lg:group-hover:pointer-events-auto">
-									<p className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 lg:rounded-none lg:border-0 lg:p-0 bg-slate-200 rounded-2xl py-1 px-2 font text-xl text-center ">
-										Bouldermeet
-									</p>
-									<div
-										className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 bg-slate-200 text-2xl w-[40px] h-[40px] rounded-full  lg:border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 active:bg-slate-800 focus:bg-slate-800 active:text-slate-200 focus:text-slate-200 transition-all duration-500text-slate-800  duration-500"
-										onClick={() =>
-											dispatch({
-												type: "SET_PROJECT_DATA",
-												payload: {
-													title: "Bouldermeet",
-													img: "/Boulder_info.jpg",
-													stack: [
-														"PayloadCMS",
-														"Next.js",
-														"Typescrript",
-														"PostgreSQL",
-														"Tailwind",
-														"Docker",
-														"Nginx",
-														"Linux Ubuntu server",
-													],
-													link: "https://bouldermeet.com/",
-													description:
-														"I've built a web app for boulder climbing competitions. The app is made using PayloadmCMS (CMS built on Next.js). The clients are able to log in using their account, apply for events, submit they results, check the news. Also the admin panel allows owner of the site to publish events, news, and keep scoreboards on different events. Every event can have multiple categories (male, women and based on age), multiple routes with multiple stages. Clients are able to see history of their results and all the events they attended to. To publish the website on VPS i used docker swarm, where i have payload, postgres, nginx, certbot and watctower containers.",
-													points: [
-														"create an account and log in",
-														"apply for events and submit results",
-														"check resutls history",
-														"create everything on payloadCMS admin panel",
-														"postgreSQL as database",
-														"published using docker on vps",
-													],
-												},
-											})
-										}
-									>
-										+
-									</div>
-								</div>
-							</div>
 							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/insignia.jpg')] xl:bg-[url('/insignia_xl.jpg')] bg-cover bg-no-repeat  group">
 								<div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50 lg:pointer-events-none lg:group-hover:pointer-events-auto">
 									<p className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 lg:rounded-none lg:border-0 lg:p-0 bg-slate-200 rounded-2xl py-1 px-2 font text-xl text-center ">
@@ -457,6 +414,48 @@ const Description = ({
 														"data dashboard for admins",
 														"UI skeletons and sonner toasts",
 														"deployed using docker, nginx on vps",
+													],
+												},
+											})
+										}
+									>
+										+
+									</div>
+								</div>
+							</div>
+							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/boulder.jpg')] xl:bg-[url('/boulder_xl.jpg')] bg-cover bg-no-repeat  group">
+								<div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50 lg:pointer-events-none lg:group-hover:pointer-events-auto">
+									<p className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 lg:rounded-none lg:border-0 lg:p-0 bg-slate-200 rounded-2xl py-1 px-2 font text-xl text-center ">
+										Bouldermeet
+									</p>
+									<div
+										className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 bg-slate-200 text-2xl w-[40px] h-[40px] rounded-full  lg:border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 active:bg-slate-800 focus:bg-slate-800 active:text-slate-200 focus:text-slate-200 transition-all duration-500text-slate-800  duration-500"
+										onClick={() =>
+											dispatch({
+												type: "SET_PROJECT_DATA",
+												payload: {
+													title: "Bouldermeet",
+													img: "/Boulder_info.jpg",
+													stack: [
+														"PayloadCMS",
+														"Next.js",
+														"Typescrript",
+														"PostgreSQL",
+														"Tailwind",
+														"Docker",
+														"Nginx",
+														"Linux Ubuntu server",
+													],
+													link: "https://bouldermeet.com/",
+													description:
+														"I've built a web app for boulder climbing competitions. The app is made using PayloadmCMS (CMS built on Next.js). The clients are able to log in using their account, apply for events, submit they results, check the news. Also the admin panel allows owner of the site to publish events, news, and keep scoreboards on different events. Every event can have multiple categories (male, women and based on age), multiple routes with multiple stages. Clients are able to see history of their results and all the events they attended to. To publish the website on VPS i used docker swarm, where i have payload, postgres, nginx, certbot and watctower containers.",
+													points: [
+														"create an account and log in",
+														"apply for events and submit results",
+														"check resutls history",
+														"create everything on payloadCMS admin panel",
+														"postgreSQL as database",
+														"published using docker on vps",
 													],
 												},
 											})
@@ -548,19 +547,18 @@ const Description = ({
 						<ul className="list-disc ml-5 text-red-500 underline">
 							<li>
 								<a
-									href="https://github.com/Tessio94/BoulderCMS"
-									target="_blank"
-								>
-									BoulderCMS
-								</a>
-							</li>
-
-							<li>
-								<a
 									href="https://github.com/Tessio94/physio-app"
 									target="_blank"
 								>
 									Physio-app
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://github.com/Tessio94/BoulderCMS"
+									target="_blank"
+								>
+									BoulderCMS
 								</a>
 							</li>
 							{/* <li>
