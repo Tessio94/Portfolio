@@ -182,6 +182,35 @@ const Description = ({
               are hosted using free services.*
             </small> */}
 						<div className="grid xsm:grid-cols-1 grid-cols-2 lg:grid-cols-3 gap-3">
+							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/zivotbezboli.jpg')] xl:bg-[url('/zivotbezboli_xl.jpg')] bg-cover group bg-no-repeat ">
+								<div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50 lg:pointer-events-none lg:group-hover:pointer-events-auto">
+									<p className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 lg:rounded-none lg:border-0 lg:p-0 bg-slate-200 rounded-2xl py-1 px-2 font text-xl text-center ">
+										Život bez boli
+									</p>
+									<div
+										className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 bg-slate-200 text-2xl w-[40px] h-[40px] rounded-full  lg:border-2 border-slate-800 flex items-center justify-center cursor-pointer hover:bg-slate-800 hover:text-slate-200 active:bg-slate-800 focus:bg-slate-800 active:text-slate-200 focus:text-slate-200 transition-all duration-500"
+										onClick={() =>
+											dispatch({
+												type: "SET_PROJECT_DATA",
+												payload: {
+													title: "Život bez boli",
+													img: "/zivotbezboli_info.jpg",
+													stack: ["Next.js", "Tailwind"],
+													link: "https://zivotbezboli.netlify.app/",
+													description:
+														"I built a website for my friend’s physiotherapy clinic using Next.js and Tailwind CSS. The site maintains a clean, modern, and fully responsive design. I plan to add contact and reservation functionality later (still in progress).",
+													points: [
+														"Transitions using motion react",
+														"Cover section carousel using Embla Carousel",
+													],
+												},
+											})
+										}
+									>
+										+
+									</div>
+								</div>
+							</div>
 							<div className="relative border-[1px] border-slate-200 h-[120px] bg-[url('/prehab.jpg')] xl:bg-[url('/prehab_xl.jpg')] bg-cover group bg-no-repeat ">
 								<div className="absolute lg:opacity-0 lg:translate-y-full lg:group-hover:translate-y-0   transition-all duration-500 lg:bg-slate-200/80 lg:group-hover:opacity-100  flex flex-col items-center justify-center w-full h-full gap-4 bg-slate-200/50 lg:pointer-events-none lg:group-hover:pointer-events-auto">
 									<p className="text-slate-800 lg:bg-transparent border-[1px] border-slate-2 lg:rounded-none lg:border-0 lg:p-0 bg-slate-200 rounded-2xl py-1 px-2 font text-xl text-center ">
