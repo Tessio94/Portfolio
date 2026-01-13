@@ -124,11 +124,11 @@ const Description = ({
 							combining strong frontend skills with backend capabilities. I use
 							technologies like Node.js and databases such as PostgreSQL and
 							MongoDB (with more focus on PSQL). I’ve also worked with PHP and
-							Laravel at a basic level. In my job, we primarily use WinterCMS to
-							develop custom CMS platforms for our clients, allowing for
-							flexible and scalable content management. My work emphasizes clean
-							architecture, user-friendly design, and performance across the
-							full tech stack.
+							Laravel at a basic level. In my job, we primarily use WinterCMS
+							(backend in Laravel) to develop custom CMS platforms for our
+							clients, allowing for flexible and scalable content management. My
+							work emphasizes clean architecture, user-friendly design, and
+							performance across the full tech stack.
 						</div>
 					</div>
 				</div>
