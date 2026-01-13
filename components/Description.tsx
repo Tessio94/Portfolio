@@ -32,6 +32,7 @@ import {
 	SiPostman,
 	SiUbuntu,
 	SiDocker,
+	SiPayloadcms,
 } from "react-icons/si";
 import { PiFileSqlFill } from "react-icons/pi";
 import { FaGitAlt } from "react-icons/fa";
@@ -684,6 +685,9 @@ const Description = ({
 							<div>
 								<p>CMS</p>
 								<ul className="ml-6 w-[270px]">
+									<li className="language-list">
+										Payload CMS <SiPayloadcms />
+									</li>
 									<li className="language-list">
 										Winter CMS{" "}
 										<Image
